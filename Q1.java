@@ -1,15 +1,19 @@
-import java.util.Scanner;
+package Recursion;
 
 public class Q1 {
-    public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
+    static int cnt = 0;
+    static void print(){
         
-        System.out.println("ENTER THE NUMBER OF LINES");
-        int n = s.nextInt();
-       for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            System.out.print("* ");
-        }System.out.println();
-       }
+         // Base Condition.
+         if(cnt == 3 ) return;
+         System.out.println(cnt);
+
+         // Count incremented.
+         cnt = cnt+1;
+         print();
+
+    }
+    public static void main(String[] args) {
+        print();
     }
 }
