@@ -1,16 +1,19 @@
-import java.util.Scanner;
+package Recursion;
 
 public class Q2 {
-public static void main(String[] args) {
-     Scanner s = new Scanner(System.in);
-        
-        System.out.println("ENTER THE NUMBER OF LINES");
-        int n = s.nextInt();
-       for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= i; j++) {
-            System.out.print("* ");
-        }System.out.println();
-       }
-}
     
+    static void func(int i, int n){
+        
+    
+        if(i>n) return;
+        System.out.println("PRATHAM");
+        func(i+1,n);
+
+}
+public static void main(String[] args) {
+
+   // Here, let’s take the value of n to be 4.
+   int n = 4;
+   func(1,n);
+}
 }
