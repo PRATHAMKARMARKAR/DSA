@@ -1,21 +1,32 @@
-import java.util.Scanner;
+package Recursion;
 
 public class Q8 {
-    public static void main(String[] args) {
-         Scanner s = new Scanner(System.in);
-         System.out.println("ENTER THE LINES OF PATTERN");
-         int n = s.nextInt();
-         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < i; j++) {
-                System.out.print(" ");
-            }
-        
-                for (int j = 0; j < 2 * n - 2*i-1; j++) {
-                    System.out.print("*");
-                
+    static private boolean isPalindrome(String s) {
+        int left = 0, right = s.length()-1;
+            while(left<right)
+            {
+                char l = s.charAt(left), r = s.charAt(right);
+                if(!Character.isLetterOrDigit(l)) 
+                    left++;
+                else if(!Character.isLetterOrDigit(r)) 
+                    right--;
+                else if(Character.toLowerCase(l)!=Character.toLowerCase(r)) 
+                    return false;
+                else {
+                    left++; 
+                    right--;
                 }
-           
-            System.out.println();
-         }
-    }
+            }
+            return true;
+      }
+      public static void main(String[] args) {
+        String str = "ABCDCBA";
+        boolean ans = isPalindrome(str);
+    
+        if (ans == true) {
+          System.out.println("Palindrome");
+        } else {
+          System.out.println("Not Palindrome");
+        }
+      } 
 }
